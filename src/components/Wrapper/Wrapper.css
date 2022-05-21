@@ -1,0 +1,44 @@
+/* 
+Flexbox holy grail fixed-height header and footer
+
+
+ensure flex-container is always at least as tall as the viewport, 
+   minus the height of the header and footer combined. 
+*/
+body {
+  margin: 0px;
+}
+
+.fc > *,
+header,
+footer {
+  margin: 10px;
+  padding: 20px;
+  background-color: lightgray;
+  border-radius: 10px;
+}
+
+/* initialize flexbox container and flexbox items */
+.fc {
+  display: flex;
+  flex-flow: row wrap;
+}
+.fc > * {
+  flex: 1;
+}
+
+/* ensure flex-container is always at least as tall as the viewport, 
+minus the height of the header and footer combined. 
+*/
+.fc {
+  min-height: calc(100vh - 200px);
+}
+
+/* size header and footer to be full width and 100px tall each */
+header,
+footer {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100px;
+  margin: 0px;
+}
